@@ -117,6 +117,8 @@ KINGFISHER_PARAGUAY_HACIENDA_CLIENT_SECRET = os.getenv('KINGFISHER_PARAGUAY_HACI
 # To get an API account, visit https://www.contrataciones.gov.py/datos/adm/signup
 KINGFISHER_PARAGUAY_DNCP_REQUEST_TOKEN = os.getenv('KINGFISHER_PARAGUAY_DNCP_REQUEST_TOKEN')
 
+KINGFISHER_ZA_NT_API_URL = os.getenv('KINGFISHER_ZA_NT_API_URL', 'https://ocds-api.etenders.gov.za/api/OCDSReleases')
+
 # To get an API account, contact contact@openopps.com.
 KINGFISHER_OPENOPPS_USERNAME = os.getenv('KINGFISHER_OPENOPPS_USERNAME')
 KINGFISHER_OPENOPPS_PASSWORD = os.getenv('KINGFISHER_OPENOPPS_PASSWORD')
