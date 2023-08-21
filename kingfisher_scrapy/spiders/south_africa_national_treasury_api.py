@@ -29,6 +29,14 @@ class SouthAfricaNationalTreasuryAPI(LinksSpider):
     # LinksSpider
     formatter = staticmethod(parameters('PageNumber'))
 
+    @classmethod
+    def from_crawler(cls, crawler, *args, **kwargs):
+        spider = super(SouthAfricaNationalTreasuryAPI, cls).from_crawler(crawler, *args, **kwargs)
+
+        spider.base_url = crawler.settings.get('KINGFISHER_ZA_NT_API_URL')
+
+        return spider
+
     def start_requests(self):
-        yield scrapy.Request('https://ocds-api.etenders.gov.za/api/OCDSReleases?PageNumber=1&PageSize=50&'
+        yield scrapy.Request(f'{self.base_url}?PageNumber=1&PageSize=50&'
                              f'dateFrom={self.from_date}&dateTo={self.until_date}', meta={'file_name': 'start.json'})
