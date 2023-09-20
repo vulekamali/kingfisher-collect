@@ -31,7 +31,7 @@ constantly==15.1.0
     # via twisted
 contextlib2==0.6.0.post1
     # via schema
-cryptography==41.0.2
+cryptography==41.0.3
     # via
     #   pyopenssl
     #   scrapy
@@ -95,7 +95,7 @@ lxml==4.9.2
     #   scrapy
 ocdsextensionregistry==0.2.2
     # via ocdskit
-ocdskit==1.1.7
+ocdskit[perf]==1.1.7
     # via -r requirements.in
 ocdsmerge==0.6.4
     # via
@@ -105,6 +105,8 @@ odfpy==1.4.1
     # via flattentool
 openpyxl==3.0.5
     # via flattentool
+orjson==3.9.5
+    # via ocdskit
 packaging==23.1
     # via
     #   scrapy
@@ -167,7 +169,7 @@ rpds-py==0.7.1
     #   referencing
 schema==0.7.2
     # via flattentool
-scrapy==2.9.0
+scrapy==2.10.0
     # via
     #   -r requirements.in
     #   scrapyd

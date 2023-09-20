@@ -27,7 +27,7 @@ class SouthAfricaNationalTreasuryAPI(LinksSpider):
     data_type = 'release_package'
 
     # LinksSpider
-    formatter = staticmethod(parameters('PageNumber'))
+    formatter = staticmethod(parameters('PageNumber', 'dateFrom'))
 
     @classmethod
     def from_crawler(cls, crawler, *args, **kwargs):
@@ -39,4 +39,5 @@ class SouthAfricaNationalTreasuryAPI(LinksSpider):
 
     def start_requests(self):
         yield scrapy.Request(f'{self.base_url}?PageNumber=1&PageSize=50&'
-                             f'dateFrom={self.from_date}&dateTo={self.until_date}', meta={'file_name': 'start.json'})
+                             f'dateFrom={self.from_date}&dateTo={self.until_date}',
+                             meta={'file_name': f'{self.from_date}.json'})
